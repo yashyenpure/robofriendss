@@ -2,7 +2,7 @@ import React , {Component}  from 'react';
 import CardList from './CardList';
 import Searchbox from './Searchbox';
 import Scroll from './Scroll';
-
+import ErrorBoundary from './ErrorBoundary' 
 import './App.css';
 
 
@@ -50,8 +50,10 @@ render() {
 			<h1 className= 'f1'>robofriends</h1>
 			<Searchbox searchChange={this.onSearchChange} />
 			<Scroll>
+				<ErrorBoundary>
 
-			<CardList robots= {filteredRobots}/>
+					<CardList robots= {filteredRobots}/>
+				</ErrorBoundary>	
 			</Scroll> 
 		</div>	
 
